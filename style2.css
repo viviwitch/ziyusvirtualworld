@@ -1011,3 +1011,15 @@ cursor: help;
     font-size: 0.9rem;
   }
 }
+
+@media (hover: none) and (pointer: coarse){
+  .projects-body .preview-image,
+  .projects-body .project:hover .preview-image,
+  .projects-body .project:focus .preview-image,
+  .projects-body .project:active .preview-image{
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
