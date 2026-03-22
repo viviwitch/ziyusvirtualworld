@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ziyu's Virtual World</title>
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="stylesheet" href="projects.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">        
+        <script src="../script.js" defer></script>
+    </head>
+
+     <body class="timemachine-body">
+        <main>
+        <div class="back">
+            <a href="#" onclick="history.back()">
+                <img src="../images/About/back.svg">
+            </a>
+        </div>
+
+        <h1 class="project-title">Time Machine</h1>
+        <div class="project-content">
+                <p class="project-desc">The idea for Time Machine came from wondering about the reality of time and thinking about how similar AI algorithms with the way things evolve in real life. I used AI to create a visual whole life of user based on their Real-time image, then show it in random order in the carousel.
+                </p>
+                <time class="project-time" datetime="2024">2024</time>
+        </div>
+
+        <section class="project-video">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/2ikiQrbFEv4"  title="Time Machine video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <h3>Ideation</h3>
+        <p class="section-intro">I've decided to use fragmented, shuffled moments of life to represent the disorder of time. I developed three design directions based on the concepts summarized in the insights.</p>
+        <img class="image01" src="images/timemachine/01.png" alt="ideation">
+
+        <h3>Hardware Composition</h3>
+        <p class="annotation">Refinement Carousel Concept</p>
+        <img class="image02" src="images/timemachine/02.png" alt="concept">
+
+        <h3>3d modeling</h3>
+        <p class="section-intro">I built models by Cinema 4D based on the concept draft and tested for the best effect, 3D printing it using regular resin and transparent resin.</p>
+        <img class="image03" src="images/timemachine/03.png" alt="3dmodel">
+
+        <h3>Project Flow</h3>
+        <p class="section-intro">I tried to do the following process to achieve step by step.</p>
+        <img class="image04" src="images/timemachine/04.png" alt="project flow">
+
+        <section class="AIexperiment">
+            <h3>AI experiment and iteration</h3>
+            <p class="section-intro">I chose the more open-source ComfyUI (Stable Diffusion) for its compatibility with other software. Compared to other AI models, Stable Diffusion offers greater control, turning uncontrollable denoising into a manageable process.</p>
+            <h4>AI Experiment 1.0</h4>
+            <img class="image10" src="images/timemachine/10.png" alt="AIexp1">
+            <img class="image11" src="images/timemachine/11.png" alt="AIexp1">
+            <h4>AI Experiment 2.0</h4>
+            <img class="image12" src="images/timemachine/12.png" alt="AIexp1">
+            <img class="image13" src="images/timemachine/13.png" alt="AIexp1">
+            <h4>AI Experiment 3.0</h4>
+            <img class="image14" src="images/timemachine/14.png" alt="AIexp1">
+            <img class="image15" src="images/timemachine/15.png" alt="AIexp1">
+        </section>
+
+         <h3>Combination of software and hardware</h3>
+           <p class="section-intro">I integrated an API-enabled ComfyUI workflow into TouchDesigner and used WebSocket for image transmission.</p>
+        <img class="image07" src="images/timemachine/07.png" alt="project flow">
+        <img class="image08" src="images/timemachine/08.png" alt="project flow">
+
+        <p class="section-intro">Sherlock Holmes said, "The world is woven from billions of lives, every strand with crossing every other. If you could attenuate to every strand of quivering data, the future would be entirely calculable."</p>
+        <p class="section-intro">During the AI experiments for this project, I realized subtle adjustments to parameters could affect and guide outcomes that seemed unpredictable.</p>
+        <img class="image09" src="images/timemachine/09.png" alt="project flow">
+    <footer>
+        <span class="home-arrow">→</span>
+        <a href="../home.html" class="home">Ziyu Zhao</a>
+    </footer>
+</body>

@@ -1,0 +1,990 @@
+/*This is a comment */
+.journal-body{
+    background: #A6C7FF;
+    /*background: linear-gradient(to bottom, #e0e5ec 0%, #f4f7f6 100%);*/
+    /*background: linear-gradient(to bottom, #A6C7FF 50%,#6b8dcf 100%);*/
+    overflow: hidden;
+}
+
+/*
+.journal-body .snow{
+  width:10px;
+  height:10px;
+  background:white;
+  transition:1s;
+}
+*/
+
+.journal-body .raindrop{
+  top: -20px;
+  width: 2px;
+  height: 30px;
+  pointer-events: none;
+  position: absolute;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.25) 20%,
+    rgba(255,255,255,0.8) 100%
+    );
+   border-radius: 999px;
+
+   transition: all 5s;
+   transition-timing-function: linear;
+   animation-duration: 3s;
+   animation-name: rainfall;
+   animation-iteration-count: infinite;
+   animation-timing-function: ease-in;
+
+   transform-origin: top center;
+}
+@keyframes rainfall{
+    from{
+        top:-10vh;
+    }
+    to {
+        top: 100vh;
+    }
+}
+
+.main-nav{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   margin-top: 5.5rem;  
+}
+
+nav a{
+    text-decoration: none;
+    color: #727272;
+}
+
+nav a:hover{
+    color: black;
+    cursor: help;
+}
+
+.journal-body nav a,.journal-body footer a{
+    color: black;
+}
+ 
+.journal-body nav a:hover,.journal-body footer a:hover{
+    color: #111111;
+}
+
+.seasaw{
+    position:relative;
+    display: flex;
+    align-items: center;
+    /*gap: 10rem;*/
+    justify-content: space-between;
+    width: min(22rem,50vw);
+    margin: 0 auto;
+}
+
+/*Font*/
+.projects-body,.journal-body,.home-body,.about-body,footer{
+    /*font-family: "inter",sans-serif; */
+    font-family:'IBM Plex Sans', sans-serif;
+   /*font-family: "Intel One Mono", monospace;*/
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+ /*
+.home-body{
+font-family:'IBM Plex Sans', sans-serif;
+}*/
+
+/*If choose Projects Page*/
+.seasaw.active-left .beam{
+    transform: rotate(-5deg);
+}
+.seasaw.active-left .left{
+    transform: translateY(11px);
+}
+.seasaw.active-left .right{
+    transform: translateY(-14px);
+} 
+
+/*If choose Journal Page*/
+.seasaw.active-right .beam{
+    transform: rotate(5deg);
+}
+.seasaw.active-right .right{
+    transform: translateY(11px);
+}
+.seasaw.active-right .left{
+    transform: translateY(-14px);
+}
+
+/*When you hover left*/
+.seasaw .left:hover ~ .beam{
+    transform: rotate(-6deg);
+}
+
+.seasaw .left:hover{
+    transform: translateY(13px);
+}
+
+.seasaw .left:hover ~ .right{
+   transform: translateY(-16px);
+}
+
+/* When you hover right side*/
+.seasaw:has(.right:hover) .beam{
+  transform: rotate(6deg);
+}
+
+.seasaw .right:hover{
+    transform: translateY(13px);
+}
+.seasaw:has(.right:hover) .left{
+   transform: translateY(-16px);
+}
+
+.seasaw .beam,
+.seasaw .left,
+.seasaw .right {
+  transition: transform 220ms ease;
+}
+
+.main-nav .left, .main-nav .right{
+    position: relative;
+    top: -14px;
+    display: inline-block;
+    /*transform: translateY(-10px);*/
+    transition:transform 220ms ease; /*缓动*/
+}
+
+.beam{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:50%;
+    height: 0.8px;
+    background:#A6C2FA;
+
+    transform: rotate(0rem); 
+    transform-origin: 50% 50%;
+    transition: transform 220ms ease; /*缓动*/
+}
+
+.journal-body .beam{
+    background: #ffffff;
+}
+
+.pivot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,calc(-50% + 17px));
+
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.9rem solid currentColor;
+    color: #A6C2FA;
+    
+  /*width:1.1rem;
+  height: 1rem;
+  background-image: url(images/nav/Pivot3.svg);
+  background-size: contain;
+  background-position: center;*/
+}
+
+
+.journal-body .pivot {
+    color: #ffffff;
+}
+
+.circle-menu{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+footer{
+    right: 7rem;
+    font-size: 0.95rem;
+    padding-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+footer a{
+    text-decoration: none;
+    color: #727272;
+    cursor: help;
+    user-select: none;
+}
+
+footer a:hover{
+    color: black;
+}
+
+main{
+    margin-top: 7.8rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+
+    flex: 1;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.projects{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap:5.8rem 4.5rem;
+    max-width: 80rem;
+}
+
+.project{
+    flex: 0 1 15rem; /* 每个项目最小宽度 15.5rem，容器窄了就自动掉到下一行 */
+    max-width: 16rem;
+    cursor:help;
+
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+.project-title{
+    color: #727272;
+    font-size: 1.1rem;
+    font-weight: 400; /*Regular*/
+    margin: 0 0 0.8rem 0;
+}
+
+.project-desc{
+    font-size: 0.9rem;
+    margin: 0 0 1.1rem 0;
+    line-height: 1.3;
+    /*
+    font-family: "Outfit", sans-serif;*/
+    /*font-family: "Work Sans", sans-serif;*/
+    /*font-family: "Manrope", sans-serif;*/
+    font-family: "Plus Jakarta Sans", sans-serif;
+      font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+  letter-spacing: 0.05em;
+}
+
+.project-tags{
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.project-year{
+    margin: 0 0 0 0;
+    font-size:0.8rem;
+}
+
+/*jounal*/
+.journals{
+    display: flex;
+    flex-direction: column;
+    gap: 4.2rem;
+}
+
+.journal{
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-end;
+    gap: 2rem;
+}
+
+.journal-text{
+    max-width: 48rem;
+}
+
+.journal-title{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 0 0.8rem 0;
+}
+
+.journal-desc{
+    color:#2e2e2e;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.3;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.journal-year{
+    font-size: 0.85rem;
+}
+
+/* home page */
+.home-body #void:hover .preview-image{
+    display: block;
+    transform: translateX(70%) translateY(-120%); 
+    width: 240px;
+    height: 300px;
+    border-radius: 9px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+    overflow: hidden;
+}
+.home-body .preview-image{
+    z-index: -50;
+}
+.home-body #void .project-desc,
+.home-body #void .project-title,
+.home-body #void .project-tags,
+.home-body #void .project-year{
+    z-index: 10;
+}
+
+.home-body #timemachine:hover .preview-image{
+    display: block;
+    transform: translateX(40%) translateY(-145%); 
+    width: 260px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+.home-body #socialanimal:hover .preview-image{
+    display: block;
+    transform: translateX(20%) translateY(-190%); 
+    width: 260px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+/* Project style - Preview images */
+.preview-image{
+    position: absolute;
+    display: none;
+}
+
+#paperino:hover .preview-image{
+    display: block;
+    background-color: #A6C2FA;
+    transform: translateX(-50%) translateY(10px); 
+    width: 240px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+#polarnight:hover .preview-image{
+    display: block;
+    transform: translateX(50%) translateY(-11%); 
+    width: 200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea;
+}
+
+#theta:hover .preview-image{
+    display: block;
+    transform: translateX(40%) translateY(-5%); 
+    width: 180px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea;
+}
+
+#void:hover .preview-image{
+    display: block;
+    transform: translateX(35%) translateY(20px); 
+    width: 240px;
+    height: 300px;
+    border-radius: 9px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+    overflow: hidden;
+}
+.preview-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:50% 65%;
+}
+
+#timemachine:hover .preview-image{
+    display: block;
+    transform: translateX(-50%) translateY(12px); 
+    width: 260px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+#socialanimal:hover .preview-image{
+    display: block;
+    transform: translateX(-50%) translateY(12px); 
+    width: 260px;
+    border-radius: 8px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+#oatlyfactory:hover .preview-image{
+    display: block;
+    transform: translateX(40%) translateY(-80%); 
+    width: 550px;
+    border-radius: 5px; 
+    box-shadow: 0 10px 10px rgba(90, 90, 90, 0.15); 
+    border: 1px solid #eaeaea; 
+}
+
+/*HomePage*/
+.home-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 4.5rem;
+}
+
+.nav-track{
+    position: relative;
+    width: 13rem;
+    height: 1.15rem;
+    /*border: 1px solid #727272;*/
+    background-color: transparent;
+    background-image: url(images/nav/nav-track.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.nav-knob{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color:#C6C5C5;
+    /*border: #111111 1px solid;*/
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url(images/nav/nav-knob.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: left 0.3s ease-in-out,background-color 0.3s ease-in-out,background-image 0.3s ease-in-out;
+}
+
+.self-intro{
+    max-width: 40rem;
+    margin: 0 auto;
+    color: #727272;
+    line-height: 1.4;
+    font-size: 0.96rem;
+    
+    font-family: "Outfit", sans-serif;
+}
+
+.self-intro a{
+    text-decoration: none;
+    color: #111111;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.self-intro a:hover{
+    border-bottom: #111111 solid 1px;
+}
+
+.home-body main{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top:6rem;/*Make it closer to nav*/
+}
+
+.top-row,.bottom-row{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Homepage projects negtive positions*/
+.home-body #paperino{
+    position: relative;
+    top: 0rem;
+    left: -4rem;
+    animation: float-path-a 6s ease-in-out infinite;
+}
+
+.home-body #theta{
+    position: relative;
+    top: 3rem;
+    left: -7rem;
+    animation: float-path-c 8s ease-in-out 1s infinite;
+}
+
+.home-body #polarnight{
+    position: relative;
+    top: -2rem;
+    left: -10rem;
+    animation: float-path-c 7s ease-in-out 2s infinite;
+}
+
+.home-body #timemachine{
+    position: relative;
+    top: -3rem;
+    left: 1rem;
+    animation: float-path-a 9s ease-in-out 0.5s infinite;
+}
+
+.home-body #void{
+    position: relative;
+    top: 3rem;
+    left: -1rem;
+    animation: float-path-a 10s ease-in-out 1s infinite;
+}
+
+.home-body #socialanimal{
+    position: relative;
+    top: -1rem;
+    left: 3rem;
+    animation: float-path-b 8.5s ease-in-out 1.5s infinite;
+}
+
+/* 轨迹 A：轻微的右上左下画圈漂浮 */
+@keyframes float-path-a {
+  0%   { transform: translate(0px, 0px); }
+  33%  { transform: translate(8px, -12px); }
+  66%  { transform: translate(-6px, 5px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* 轨迹 B：稍微大一点的上下缓慢浮动 */
+@keyframes float-path-b {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(0px, -15px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* 轨迹 C：左右轻轻摇摆 */
+@keyframes float-path-c {
+  0%   { transform: translate(0px, 0px); }
+  50%  { transform: translate(12px, 0px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/*seasaw hover*/
+.project:hover{
+    animation-play-state: paused !important;
+}
+
+.main-nav .left::after, 
+.main-nav .right::after {
+    content: "";
+    position: absolute;
+    top: -40px;    
+    bottom: -40px; 
+    left: -20px;
+    right: -20px;
+}
+
+/*About page*/
+.about-body main{
+    margin-top: 6rem;
+}
+
+.about-mobile-top{
+    display: none;
+}
+
+.back{
+    font-size: 1rem;
+    position: relative;
+    /*transform: translate(-30px,-15px);*/
+    left: -30px;
+    top: -15px;
+    transform-origin: left center;
+    transition: transform 0.2s ease;
+}
+
+.back:hover{
+    /*opacity: 0.5;*/
+    transform: scaleX(0.9);
+}
+
+.about-name{
+    font-weight: 300;
+    font-size: 1.5rem;
+    color:#727272;
+}
+
+.self-intro2{
+    font-size: 0.95rem;
+    letter-spacing:0.05em;
+    max-width: 40rem;
+    line-height: 1.4;
+    /*text-align: justify;*/
+}
+
+.about-contact{
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+.about-contact img{
+    cursor: pointer;
+}
+
+.telephone{
+    margin: 0;
+}
+
+/* journals */
+.journals a{
+text-decoration: none;
+color: inherit;
+cursor: help;
+}
+
+/* Phone Version */
+@media (max-width:768px){
+    /* .projects-body{
+        min-height: 100vh;
+    } */
+
+    .main-nav{
+        justify-content:space-between;
+        align-items: flex-start;
+        margin-top: 2.2rem;
+        padding: 0 1.5rem;
+    }
+
+    .seasaw{
+        width: 100%;
+        justify-content: center;
+        position: relative;
+    }
+
+    .main-nav .left,
+    .main-nav .right{
+        font-size: 0;
+        pointer-events: none;
+    }
+
+ .beam{
+    width: 7rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) rotate(-5deg);
+    top: 0.7rem;
+  }
+
+  .seasaw.active-left .beam{
+    transform: translateX(-50%) rotate(-5deg);
+  }
+
+  .pivot{
+    left: 50%;
+    top: 1.25rem;
+    transform: translateX(-50%);
+    border-left: 0.6rem solid transparent;
+    border-right: 0.6rem solid transparent;
+    border-bottom: 1rem solid currentColor;
+  }
+  
+  main{
+    margin-top: 5.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .projects{
+    display: flex;
+    flex-wrap:wrap;
+    row-gap: 3.3rem;
+    column-gap: 2rem;
+  }
+
+  .project{
+    flex: 0 0 calc(50% - 1rem);
+    max-width: none;
+  }
+
+  .project-title{
+    font-size: 0.95rem;
+    margin: 0 0 0.8rem 0;
+    line-height: 1.2rem;
+  }
+
+    .project-desc{
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin: 0 0 0.9rem 0;
+    letter-spacing: 0.02em;
+  }
+
+  .project-tags{
+    font-size: 0.8rem;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .project-year{
+    font-size: 0.72rem;
+  }
+
+    .preview-image{
+    display: none;
+  }
+
+  .preview-image:hover{
+    display: none !important;
+  }
+
+    footer{
+    /* padding: 2.5rem 0 1.5rem;
+    font-size: 0.82rem; */
+    font-size: 0;
+  }
+
+  /* Mobile Menu */
+    .circle-menu{
+        display: flex;
+        width: 1.8rem;
+        height: 1.8rem; 
+        /* border: 1px solid black; */
+        border-radius: 50%;
+        background-color: #D4E2FF;
+        border: none;
+        cursor: pointer;
+
+        position: fixed;
+        right: 1.8rem;
+        top: 2.5rem;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+        z-index: 120;
+    }
+
+    .circle-menu.open{
+        /* transform: scale(35); */
+        /* background-color: #A6C7FF; */
+        /* border-radius: 0%; */
+        background: transparent;
+        transform: rotate(90deg);
+    }
+
+    .circle-menu::before,
+    .circle-menu::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1.6px;
+        background: #222;
+        transform-origin: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .circle-menu.open::before,
+    .circle-menu.open::after{
+        width: 1.6rem;
+        opacity: 1;
+    }
+
+    .circle-menu.open::before{
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+     .circle-menu.open::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+    .mobile-menu{
+        display: flex;
+        position: fixed;
+        /* right: -50%; */
+        box-sizing: border-box;
+        right: -100%;
+        width: 50%;
+        top: 2rem;
+        height: 98vh;
+        /* font-family:'IBM Plex Sans', sans-serif; */
+        font-family: "inter", sans-serif;
+        background-color: rgba(166,194,250,0.85);
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 8rem;
+        padding-left: 2rem;
+        gap: 5rem;
+        transition: right 280ms ease;
+        z-index: 110;
+    }
+
+    .mobile-menu a{
+        text-decoration: none;
+        font-weight: 400;
+        color: #111;
+        font-size:1.2rem;
+    }
+
+    .mobile-menu a.current{
+        color: #727272;
+    }
+
+    .mobile-menu.open{
+        right: 0;
+    }
+
+     .menu-overlay{
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.08);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 240ms ease;
+        z-index: 90;
+     }
+
+    .menu-overlay.open{
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Journal-mobile */
+@media (max-width: 768px){
+
+    /* menu and nav */
+    .seasaw.active-right .beam{
+    transform: translateX(-50%) rotate(5deg);
+  }
+
+  .journal-body .mobile-menu{
+    background-color: #ffffff85;
+  }
+
+  .journal-body{
+    overflow-x: hidden;
+  }
+
+  .journal-body main{
+    margin-top: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .journals{
+    gap: 3.2rem;
+  }
+
+  .journal{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 0.8rem;
+    /* padding-right: 1rem; */
+  }
+
+  .journal-text{
+    max-width: 100%;
+  }
+
+  .journal-title{
+    font-size: 1rem;
+    line-height:1.25;
+    margin: 0 0 0.7rem 0;
+  }
+
+  .journal-desc{
+    font-size: 0.88rem;
+    letter-spacing: 0.02rem;
+    line-height: 1.4;
+    max-width: 20rem;
+  }
+
+  .journal-year{
+    font-size: 0.8rem;
+    line-height: 1;
+    color: #111;
+    margin-top: 0.15rem;
+  }
+
+  .journal-body footer{
+    font-size: 0.85rem;
+    padding: 2rem 0 1.5rem;
+  }
+}
+
+/* About mobile */
+@media (max-width:768px){
+    .about-body .back{
+        display: none;
+    }
+
+    .about-body main{
+        margin-top: 2.2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .about-mobile-top{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        padding-top: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .about-mobile-top .beam{
+        transform: translateX(-50%) rotate(0deg);
+        height: 1.1px;
+    }
+
+    .about-name{
+        font-size: 1.3rem;
+    }
+    .self-intro2{
+    max-width: 99%;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+  }
+
+  .self-intro2 p{
+    margin: 0;
+  }
+
+  .about-contact{
+    margin-top: 1.1rem;
+    /* margin-bottom: 1rem; */
+    gap: 0.45rem;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .telephone{
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}

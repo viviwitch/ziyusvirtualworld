@@ -1,0 +1,551 @@
+/* .back{
+    margin-top: 3.5rem;
+    left: 5%;
+    position: relative;
+    transform-origin: left center;
+     transition: transform 0.2s ease;
+}
+
+.back:hover{
+     transform: scaleX(0.8);
+} */
+
+.back{
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    left: 5%;
+    position: relative;
+    transform-origin: left center;
+     transition: transform 0.2s ease;
+
+     position: fixed;
+}
+
+.back:hover{
+     transform: scaleX(0.8);
+}
+
+main{
+    padding-top: 2rem;
+    flex: 1;
+}
+
+body{
+     font-family: "Plus Jakarta Sans", sans-serif;
+     /*font-family:'IBM Plex Sans', sans-serif;*/
+}
+
+/* .project-title{
+     font-family: "inter", sans-serif;
+     text-align: center;
+     font-size: 1.3rem;
+     font-weight: 300;
+     color: #727272;
+     letter-spacing: 0.02em;
+} */
+
+.project-title{
+    font-family: "Plus Jakarta Sans", sans-serif;
+     text-align: center;
+     font-size: 1.5rem;
+     font-weight: 600;
+     color: black;
+     letter-spacing: 0.03em;
+     margin-top: 1rem;
+}
+
+.project-content{
+     max-width: 60rem;
+     margin: 0 auto;
+     padding-top: 1rem;
+     text-align: justify;
+     line-height: 1.4;
+     font-size: 0.98rem;
+     font-family:'IBM Plex Sans', sans-serif;
+}
+
+.project-time{
+     display: block;
+     text-align: right;
+     font-size: 0.85rem;
+}
+
+/*Polar night*/
+.polarnight-body .gallery{
+     position: relative;
+     width: 100%;
+     height: 80vh;
+     margin: 0 auto;
+}
+
+.polarnight-body{
+     overflow-x: hidden;
+}
+
+.center-img{
+     position: absolute;
+     margin: 0;
+
+     max-width: 25rem;
+     left: 50%;
+     top: 40%;
+     transform: translate(-50%,-50%);
+
+     transition: transform 0.02s ease; 
+     cursor: pointer;  
+}
+
+.surround-img{
+     position: absolute;
+     margin: 0;
+     opacity: 0; 
+
+     /* background: #F0F0F0; */
+     border-radius: 6px 6px 0 0;
+     overflow: hidden;
+     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+.surround-img::before {
+  content: "";
+  display: block;
+  height: 15px;
+  background: #F0F0F0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.surround-img::after {
+     content: "";
+     position: absolute;
+     top: 3px;
+     left: 10px;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background-color: #ffffff;
+}
+
+.gallery img{
+     display: block;
+     width: 100%;
+     height: auto;
+}
+
+.center-img:hover{
+     transform: translate(-50%,-50%) scale(1.01);
+}
+
+.center-img:hover~ .surround-img{
+     opacity: 1;
+     transition: opacity 0.3s ease;
+}
+
+
+
+.p1{
+     max-width: 20rem;
+     top: 5%;
+     left: 60%;
+}
+
+.p2{
+     max-width: 28rem;
+     top: 50%;
+     right: 14%;
+}
+
+.p3{
+     max-width: 20rem;
+     top: 38%;
+     left: 15%;
+}
+
+.p4{
+     max-width: 18rem;
+     top: 5%;
+     left: 20%;
+}
+
+.p5{
+     max-width: 16rem;
+     bottom: 10%;
+     left: 30%;
+}
+
+.hover-hint{
+     position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Paperino */
+.paperino-body{
+     overflow-x: hidden;
+}
+
+.paperino-body img{
+     max-width: 50rem;
+}
+
+/* PolarNights Mobile */
+ @media (max-width:768px){
+     .polarnight-body .hover-hint{
+     display: block;
+     font-size: 0.82rem;
+     color: #777;
+     }
+     .gallery.open .surround-img{
+     opacity: 1;
+     transition: opacity 0.3s ease;
+     }
+}
+
+.project-video{
+     width: 100%;
+     max-width: 900px;
+     margin: 3rem auto 0;
+}
+
+.video-wrapper{
+     position: relative;
+     width: 100%;
+     padding-top: 56.25%; /* 16:9 */
+}
+
+.video-wrapper iframe{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     border-radius: 12px;
+}
+
+/* Timemachine */
+h3{
+     font-family: "Plus Jakarta Sans", sans-serif;
+     text-align: center;
+     margin-top: 6rem;
+     margin-bottom: 1rem;
+     letter-spacing: 0.03em;
+     font-size: 1.3rem;
+     font-weight: 600;
+}
+
+h4{
+     text-align: center;
+     letter-spacing: 0.03rem;
+}
+
+.section-intro{
+     max-width: 60rem;
+     margin: 0 auto;
+     padding-top: 1rem;
+     text-align: justify;
+     line-height: 1.4;
+     font-size: 0.98rem;
+     font-family:'IBM Plex Sans', sans-serif;
+}
+
+.timemachine-body img{
+     display: block;
+     width: 100%;
+     max-width: 50rem;
+     height: auto;
+     margin: 2rem auto;
+}
+.timemachine-body .image02{
+     max-width: 45rem;
+}
+
+.timemachine-body .annotation{
+     text-align: center;
+     margin-top: 0;
+     font-size: 0.85rem;
+}
+
+.timemachine-body .image03{
+     max-width: 40rem;
+}
+
+.timemachine-body .image04{
+     max-width: 105vh;
+}
+
+.timemachine-body .image05{
+     max-width: 105vh;
+     margin-bottom: 0;
+}
+
+.AIdiv{
+     max-width: 105vh;
+     background-color: black;
+     margin: 0 auto;
+}
+
+.timemachine-body .image06{
+     max-width: 70vh;
+     margin-top: 0;
+}
+
+.timemachine-body .image07{
+     max-width: 105vh;
+     margin-bottom: 1rem;
+}
+.timemachine-body .image08{
+     max-width: 105vh;
+     margin-top: 0;
+}
+
+.timemachine-body .image09{
+     max-width: 65vh;
+}
+
+/* Social Animal */
+
+.socialanimal-body img{
+     width: 100%;
+     max-width: 55rem;
+     height: auto;
+     display: block;
+     margin: 1.5rem auto;
+     padding-top: 1.5rem;
+}
+
+.socialanimal-body h3{
+     margin-top: 3rem;
+}
+
+.socialanimal-body .designsystem{
+     background-color: #FFFA79;
+     max-width: 60rem;
+     padding: 0 2rem 1rem 2rem;
+     margin: 0 auto;
+     border-radius: 14px;
+}
+
+.socialanimal-body .interface{
+     background-color: black;
+     max-width: 60rem;
+     margin: 0 auto;
+     padding: 1rem 2rem;
+     border-radius: 12px;
+}
+
+.socialanimal-body .image01{
+     max-width: 55rem;
+}
+
+.socialanimal-body .image02{
+     max-width: 50rem;
+}
+
+.socialanimal-body .ideation{
+     max-width: 65rem;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.5rem;
+     margin: 0 auto;
+     padding-top: 0;
+}
+
+.socialanimal-body .ideaimage{
+     max-width: 28rem;;
+     margin: 0;
+}
+
+.socialanimal-body .image04{
+     max-width: 40rem;
+}
+
+.socialanimal-body .image05{
+     max-width: 45rem;
+}
+
+.socialanimal-body .image06{
+     max-width: 42rem;
+}
+
+.socialanimal-body .image07{
+     max-width: 40rem;
+}
+
+.socialanimal-body .image08{
+     max-width: 40rem;
+}
+
+.socialanimal-body .image09{
+     max-width: 40rem;
+}
+
+.socialanimal-body .image10,.socialanimal-body .image11{
+     max-width: 45rem;
+}
+.socialanimal-body .image12, .socialanimal-body .image13, .socialanimal-body .image14{
+     max-width: 45rem;
+}
+
+.socialanimal-body .image15{
+     max-width: 40rem;
+     padding-top: 0;
+}
+
+.socialanimal-body .image17{
+     max-width: 20rem;
+     padding-top: 0;
+     padding-bottom: 0;
+     margin-bottom: 2rem;
+     margin-top: 3rem;
+}
+
+/* Do not enter the void */
+.void-body .video-wrapper{
+     margin-top: 2rem;
+}
+
+.void-body h3{
+     margin-top: 4rem;
+     margin-bottom: 1.5rem;
+     text-align: center;
+}
+
+.void-body img{
+     max-width: 60rem;
+     display: block;
+     margin: 1.5rem auto;
+     padding-top: 1.5rem;
+}
+
+.void-body .image02{
+     max-width: 35rem;
+}
+
+.void-body .image06{
+     max-width: 75rem;
+     /* transform: translateX(-10%); */
+}
+
+.void-body .image07{
+     max-width: 40rem;
+}
+
+.void-body .image08{
+     max-width: 50rem;
+}
+
+.void-body .image09{
+     max-width: 40rem;
+}
+
+.void-body .reflection{
+     margin-top: 3rem;
+     margin-bottom: 3.5rem;
+}
+
+
+@media (max-width: 768px){
+
+  body.paperino-body{
+    overflow-x: hidden;
+    background: #fff;
+  }
+
+  main{
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 0;
+  }
+
+  .back{
+    position: static;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    left: auto;
+    transform: none;
+  }
+
+  .back a{
+    display: inline-flex;
+    padding: 0.35rem 0.45rem 0.35rem 0;
+  }
+
+  .back img{
+    width: 4.8rem;
+    height: auto;
+    display: block;
+  }
+
+  .project-title{
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+  }
+
+  .project-content,.section-intro{
+    max-width: 100%;
+    margin: 0;
+    padding-top: 0;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 0.92rem;
+  }
+
+  .socialanimal-body h3, .timemachine-body h3, .void-body h3{
+     font-size: 1rem;
+  }
+
+  .project-desc,
+  .project-content p{
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .project-content h3{
+    font-size: 0.98rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .paperino-body img,
+  .project-content img{
+    display: block;
+    width: 100%;
+    max-width: 21rem;
+    height: auto;
+    margin: 1.8rem auto 0;
+  }
+
+  .project-time{
+    font-size: 0.8rem;
+    margin-top: 1.8rem;
+  }
+}
+
+/* footer */
+footer{
+     margin-top: 2rem;
+    right: 7rem;
+    font-size: 0.95rem;
+    padding-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-family:'IBM Plex Sans', sans-serif;
+}
+
+footer a{
+    text-decoration: none;
+    color: #727272;
+    cursor: help;
+    user-select: none;
+}
+
+footer a:hover{
+    color: black;
+}
