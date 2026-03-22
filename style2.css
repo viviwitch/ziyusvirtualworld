@@ -189,12 +189,6 @@ font-family:'IBM Plex Sans', sans-serif;
     border-right: 0.5rem solid transparent;
     border-bottom: 0.9rem solid currentColor;
     color: #A6C2FA;
-    
-  /*width:1.1rem;
-  height: 1rem;
-  background-image: url(images/nav/Pivot3.svg);
-  background-size: contain;
-  background-position: center;*/
 }
 
   .pivot:hover{
@@ -762,7 +756,7 @@ cursor: help;
     display: none;
   }
 
-  .project:hover~ preview-image:hover{
+  .project:hover~ preview-image{
     display: none !important;
   }
 
